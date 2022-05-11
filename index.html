@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>myMemoPad</title>
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <h1>MemoPad</h1>
+</header>
+<main>
+    <div id="input_area">
+        <p>タイトル:</p>
+        <input type="text" id="input_title">
+        <p>内容:</p>
+        <textarea id="input_memo"></textarea>
+        <p>ジャンル:<span id="input_genre"></span></p>
+        <div id="input_regist"></div>
+        <div id="valid" class="error"></div>
+    </div>
+    <ul id="button_area">
+        <li id="new" class="hidden">新規作成へ戻る</li>
+        <li id="save">保存</li>
+        <li id="edit" class="hidden">編集を保存</li>
+        <li id="delete" class="hidden">削除</li>
+        <li id="clear">全削除</li>
+    </ul>
+</main>
+
+<div id="list_area">
+    <ul id="list_items"></ul>
+</div>
+
+<div class="modal js-modal">
+    <div class="modal__bg js-modal-close"></div>
+    <div class="modal__content">
+        <div id="modal__text">表示したいテキスト</div>
+        <a class="js-modal-close" href="">閉じる</a>
+    </div>
+</div>
+
+<input type="hidden" value="" id="hidden1">
+
+
+<script src="./js/memo.js"></script>
+</body>
+</html>
