@@ -178,15 +178,12 @@ td {
 #list_area img {
     object-fit: cover;
 }
-#list_area h3 {
-    margin-left: 10px;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-}
 #list_area p {
     margin-left: 10px;
     text-align: left;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
 }
 .hidden {
     display: none;

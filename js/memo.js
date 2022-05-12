@@ -49,7 +49,8 @@ for (let i = 0 ; i < localStorage.length ; i++) {
         <li id="${i}" class="list_item effect-fade">
         <div class="list_img"><img src="./img/sample.png" alt=""></div>
         <div class="list_text">
-            <h3 id="list_title${i}" class="list_title">${values['title']}</h3>
+            <p id="list_title${i}" class="list_title">${values['title']}</p>
+            <p id="list_memo${i}" class="list_memo">${values['memo']}</p>
             <span id="list_regist${i}" class="list_date">${values['regist']}</span><span>&nbsp;|&nbsp;</span><span id="list_genre${i}" class="list_genre${genre_index}">${values['genre']}</span>
         </div>
         </li>`;
@@ -104,7 +105,8 @@ $("#save").on("click", function(){
         <li id="${storage_length}" class="list_item fadeUp">
         <div class="list_img"><img src="./img/sample.png" alt=""></div>
         <div class="list_text">
-            <h3 id="list_title${storage_length}" class="list_title">${items['title']}</h3>
+            <p id="list_title${storage_length}" class="list_title">${items['title']}</p>
+            <p id="list_memo${storage_length}" class="list_memo">${items['memo']}</p>
             <span id="list_regist${storage_length}" class="list_date">${now}</span><span>&nbsp;|&nbsp;</span>
             <span id="list_genre${storage_length}" class="list_genre">${genre}</span>
         </div>
