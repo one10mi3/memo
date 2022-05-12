@@ -18,12 +18,6 @@
 //     }
 // };
 
-// function changeBackColor(){
-//     var elements = document.getElementsByClassName('c1');
-//     for(i=0;i<elements.length;i++){
-//       elements[i].style.backgroundColor = "#00ff00";
-//     }
-// }
 
 // inputジャンルの生成
 const genres = ["エンタメ", "スポーツ", "ゲーム", "IT", "恋愛"];
