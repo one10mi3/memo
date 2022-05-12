@@ -8,6 +8,22 @@
 //     });
 // });
 
+// let removeClassElement = function(className){
+//     let elements = document.getElementsByClassName(className);
+//     for (let i = 0; i < elements.length; i++) {
+//       let e = elements[i];
+//       if (e) {
+//         e.parentNode.removeChild(e);
+//       }
+//     }
+// };
+
+// function changeBackColor(){
+//     var elements = document.getElementsByClassName('c1');
+//     for(i=0;i<elements.length;i++){
+//       elements[i].style.backgroundColor = "#00ff00";
+//     }
+// }
 
 // inputジャンルの生成
 const genres = ["エンタメ", "スポーツ", "ゲーム", "IT", "恋愛"];
@@ -28,12 +44,13 @@ for (let i = 0 ; i < localStorage.length ; i++) {
     let  values = JSON.parse(localStorage.getItem('m' + i)); 
     let html;
     if (values['key1'] != "delete") {
+        let genre_index = check_genre_number(values['genre']);
         html =`
         <li id="${i}" class="list_item effect-fade">
         <div class="list_img"><img src="./img/sample.png" alt=""></div>
         <div class="list_text">
             <h3 id="list_title${i}" class="list_title">${values['title']}</h3>
-            <span id="list_regist${i}" class="list_date">${values['regist']}</span><span>&nbsp;|&nbsp;</span><span id="list_genre${i}" class="list_genre">${values['genre']}</span>
+            <span id="list_regist${i}" class="list_date">${values['regist']}</span><span>&nbsp;|&nbsp;</span><span id="list_genre${i}" class="list_genre${genre_index}">${values['genre']}</span>
         </div>
         </li>`;
     }
@@ -114,6 +131,8 @@ $(document).on("click", "#list_area #list_items li", function () {
     $('#valid').html("");
 
     hide_save_btn();
+
+    // sort_genre();
     
     let id = $(this).attr('id');
     let values = JSON.parse(localStorage.getItem('m' + id)); 
@@ -227,6 +246,15 @@ $("#clear").on("click", function(){
     }
 });
 
+
+// ソート機能未実装
+function sort_genre() {
+    let elements = document.getElementsByClassName('list_genre1');
+    for(i=0;i<elements.length;i++){
+        console.log(elements[i]);
+        elements[i].style.display = "none";
+    }
+}
 
 function show_save_btn() {
     $("#save").removeClass("hidden");
